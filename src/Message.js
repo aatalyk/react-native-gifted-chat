@@ -24,6 +24,7 @@ export default class Message extends React.Component {
 	renderDay() {
 		if (this.props.currentMessage.createdAt) {
 			const dayProps = this.getInnerComponentProps();
+			console.log('DAy', dayProps);
 			if (this.props.renderDay) {
 				return this.props.renderDay(dayProps);
 			}
@@ -108,6 +109,7 @@ const styles = {
 };
 
 Message.defaultProps = {
+	lang: 'rus',
 	renderAvatar: undefined,
 	renderBubble: null,
 	renderDay: null,
@@ -123,6 +125,7 @@ Message.defaultProps = {
 };
 
 Message.propTypes = {
+	lang: PropTypes.string,
 	renderAvatar: PropTypes.func,
 	showUserAvatar: PropTypes.bool,
 	renderBubble: PropTypes.func,

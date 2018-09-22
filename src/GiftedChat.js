@@ -520,6 +520,7 @@ GiftedChat.childContextTypes = {
 };
 
 GiftedChat.defaultProps = {
+	lang: 'rus',
 	messages: [],
 	text: undefined,
 	placeholder: DEFAULT_PLACEHOLDER,
@@ -579,6 +580,7 @@ GiftedChat.defaultProps = {
 };
 
 GiftedChat.propTypes = {
+	lang: PropTypes.string,
 	messages: PropTypes.arrayOf(PropTypes.object),
 	text: PropTypes.string,
 	placeholder: PropTypes.string,

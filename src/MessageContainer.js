@@ -174,6 +174,7 @@ const styles = StyleSheet.create({
 });
 
 MessageContainer.defaultProps = {
+	lang: 'rus',
 	messages: [],
 	user: {},
 	renderFooter: null,
@@ -186,6 +187,7 @@ MessageContainer.defaultProps = {
 };
 
 MessageContainer.propTypes = {
+	lang: PropTypes.string,
 	messages: PropTypes.arrayOf(PropTypes.object),
 	user: PropTypes.object,
 	renderFooter: PropTypes.func,

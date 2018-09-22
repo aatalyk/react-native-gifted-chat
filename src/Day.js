@@ -7,22 +7,20 @@ import moment from 'moment';
 
 import Color from './Color';
 
-import { isSameDay, isSameUser, warnDeprecated } from './utils';
+import { isSameDay, isSameUser, warnDeprecated, formatDate } from './utils';
 import { DATE_FORMAT } from './Constant';
 
 export default function Day(
-	{ dateFormat, currentMessage, previousMessage, containerStyle, wrapperStyle, textStyle },
+	{ dateFormat, currentMessage, previousMessage, containerStyle, wrapperStyle, textStyle, lang },
 	context
 ) {
 	if (!isSameDay(currentMessage, previousMessage)) {
+		console.log(currentMessage.createdAt, lang);
 		return (
 			<View style={[styles.container, containerStyle]}>
 				<View style={wrapperStyle}>
 					<Text style={[styles.text, textStyle]}>
-						{moment(currentMessage.createdAt)
-							.locale(context.getLocale())
-							.format(dateFormat)
-							.toUpperCase()}
+						{formatDate(new Date(currentMessage.createdAt), lang).toUpperCase()}
 					</Text>
 				</View>
 			</View>
@@ -51,6 +49,7 @@ Day.contextTypes = {
 };
 
 Day.defaultProps = {
+	lang: 'rus',
 	currentMessage: {
 		// TODO: test if crash when createdAt === null
 		createdAt: null
@@ -66,6 +65,7 @@ Day.defaultProps = {
 };
 
 Day.propTypes = {
+	lang: PropTypes.string,
 	currentMessage: PropTypes.object,
 	previousMessage: PropTypes.object,
 	containerStyle: ViewPropTypes.style,

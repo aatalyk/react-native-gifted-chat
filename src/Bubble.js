@@ -23,18 +23,21 @@ export default class Bubble extends React.Component {
 		} else if (this.props.currentMessage.text) {
 			const options = ['Copy Text', 'Cancel'];
 			const cancelButtonIndex = options.length - 1;
-			this.context.actionSheet().showActionSheetWithOptions({
-				options,
-				cancelButtonIndex
-			}, buttonIndex => {
-				switch (buttonIndex) {
-					case 0:
-						Clipboard.setString(this.props.currentMessage.text);
-						break;
-					default:
-						break;
+			this.context.actionSheet().showActionSheetWithOptions(
+				{
+					options,
+					cancelButtonIndex
+				},
+				buttonIndex => {
+					switch (buttonIndex) {
+						case 0:
+							Clipboard.setString(this.props.currentMessage.text);
+							break;
+						default:
+							break;
+					}
 				}
-			});
+			);
 		}
 	}
 
