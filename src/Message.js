@@ -24,7 +24,6 @@ export default class Message extends React.Component {
 	renderDay() {
 		if (this.props.currentMessage.createdAt) {
 			const dayProps = this.getInnerComponentProps();
-			console.log('DAy', dayProps);
 			if (this.props.renderDay) {
 				return this.props.renderDay(dayProps);
 			}
@@ -58,7 +57,7 @@ export default class Message extends React.Component {
 		if (currentMessage.user.avatar === null) {
 			return null;
 		}
-		return <Avatar {...avatarProps} />;
+		return null;
 	}
 
 	render() {

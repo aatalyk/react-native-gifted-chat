@@ -29,9 +29,10 @@ export default class Composer extends React.Component {
 	}
 
 	render() {
+		console.log('Composer', this.props.lang);
 		return (
 			<TextInput
-				placeholder={this.props.placeholder}
+				placeholder={this.props.lang === 'kaz' ? 'Хабарлама теріңіз...' : 'Введите сообщение...'}
 				placeholderTextColor={this.props.placeholderTextColor}
 				multiline={this.props.multiline}
 				onChange={e => this.onContentSizeChange(e)}

@@ -56,15 +56,23 @@ export default class InputToolbar extends React.Component {
 		if (this.props.renderSendGuest) {
 			return this.props.renderSendGuest(this.props);
 		}
-		console.log(this.props);
-		return <Send {...this.props} onSend={this.props.onSendGuest} label="Me" textStyle={{ color: 'orange' }} />;
+		const { lang } = this.props;
+		return (
+			<Send
+				{...this.props}
+				onSend={this.props.onSendGuest}
+				label={lang === 'kaz' ? 'Мен' : 'Я'}
+				textStyle={{ color: 'orange' }}
+			/>
+		);
 	}
 
 	renderSend() {
 		if (this.props.renderSend) {
 			return this.props.renderSend(this.props);
 		}
-		return <Send {...this.props} />;
+		const { lang } = this.props;
+		return <Send {...this.props} label={lang === 'kaz' ? 'Сіз' : 'Вы'} />;
 	}
 
 	renderComposer() {

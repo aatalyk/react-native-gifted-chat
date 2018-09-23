@@ -342,7 +342,6 @@ class GiftedChat extends React.Component {
 	}
 
 	onSendGuest(messages = [], shouldResetInputToolbar = false) {
-		console.log('onSendGuest', this.props.guest);
 		if (!Array.isArray(messages)) {
 			messages = [messages];
 		}

@@ -61,9 +61,15 @@ export function formatDate(date, lang = 'rus') {
 			'Декабрь'
 		]
 	};
-	var day = date.getDate();
-	var monthIndex = date.getMonth();
-	var year = date.getFullYear();
+	const day = date.getDate();
+	const monthIndex = date.getMonth();
+	const year = date.getFullYear();
 
 	return day + ' ' + monthNames[lang][monthIndex] + ' ' + year;
+}
+
+export function formatTime(date) {
+	const hour = date.getHours();
+	const minutes = date.getMinutes();
+	return hour + ':' + minutes;
 }

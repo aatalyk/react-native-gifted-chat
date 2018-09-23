@@ -6,6 +6,7 @@ import { StyleSheet, Text, View, ViewPropTypes } from 'react-native';
 
 import moment from 'moment';
 
+import { formatTime } from './utils';
 import Color from './Color';
 import { TIME_FORMAT } from './Constant';
 
