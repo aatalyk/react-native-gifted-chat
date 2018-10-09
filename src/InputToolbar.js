@@ -62,7 +62,7 @@ export default class InputToolbar extends React.Component {
 				{...this.props}
 				onSend={this.props.onSendGuest}
 				label={lang === 'kaz' ? 'Мен' : 'Я'}
-				textStyle={{ color: 'orange' }}
+				textStyle={{ color: 'rgb(227, 71, 111)' }}
 			/>
 		);
 	}
