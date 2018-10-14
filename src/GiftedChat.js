@@ -311,7 +311,7 @@ class GiftedChat extends React.Component {
 		);
 	}
 
-	onSend(messages = [], shouldResetInputToolbar = false) {
+	onSend(messages = [], shouldResetInputToolbar = true) {
 		if (!Array.isArray(messages)) {
 			messages = [messages];
 		}
@@ -341,7 +341,7 @@ class GiftedChat extends React.Component {
 		}
 	}
 
-	onSendGuest(messages = [], shouldResetInputToolbar = false) {
+	onSendGuest(messages = [], shouldResetInputToolbar = true) {
 		if (!Array.isArray(messages)) {
 			messages = [messages];
 		}
